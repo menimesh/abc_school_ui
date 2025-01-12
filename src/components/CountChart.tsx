@@ -1,3 +1,4 @@
+"use client";
 import React, { PureComponent } from "react";
 import Image from "next/image";
 import { RadialBarChart, RadialBar, Tooltip } from "recharts";
@@ -57,8 +58,8 @@ const CountChart = () => {
         <h1 className="text-xl font-semibold">Students</h1>
         <Image src="/moreDark.png" alt="More Icon" width={20} height={20} />
       </div>
-      <div>
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="h-full ">
+        <ResponsiveContainer>
           <RadialBarChart
             cx="50%"
             cy="50%"
