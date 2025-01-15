@@ -7,46 +7,22 @@ import { Legend, ResponsiveContainer } from "recharts";
 
 const data = [
   {
-    name: "18-24",
-    uv: 31.47,
-    pv: 2400,
-    fill: "#8884d8",
+    name: "Total",
+    uv: 100,
+
+    fill: "white",
   },
   {
-    name: "25-29",
-    uv: 26.69,
-    pv: 4567,
-    fill: "#83a6ed",
+    name: "Girls",
+    uv: 50,
+
+    fill: "#FAE27C",
   },
   {
-    name: "30-34",
-    uv: 15.69,
-    pv: 1398,
-    fill: "#8dd1e1",
-  },
-  {
-    name: "35-39",
-    uv: 8.22,
-    pv: 9800,
-    fill: "#82ca9d",
-  },
-  {
-    name: "40-49",
-    uv: 8.63,
-    pv: 3908,
-    fill: "#a4de6c",
-  },
-  {
-    name: "50+",
-    uv: 2.63,
-    pv: 4800,
-    fill: "#d0ed57",
-  },
-  {
-    name: "unknow",
-    uv: 6.67,
-    pv: 4800,
-    fill: "#ffc658",
+    name: "Boys",
+    uv: 50,
+
+    fill: "#CFCEFF",
   },
 ];
 
@@ -58,24 +34,26 @@ const CountChart = () => {
         <h1 className="text-xl font-semibold">Students</h1>
         <Image src="/moreDark.png" alt="More Icon" width={20} height={20} />
       </div>
-      <div className="h-full ">
+      <div className="relative w-full h-[75%] ">
         <ResponsiveContainer>
           <RadialBarChart
             cx="50%"
             cy="50%"
-            innerRadius="10%"
-            outerRadius="80%"
-            barSize={10}
+            innerRadius="40%"
+            outerRadius="100%"
+            barSize={30}
             data={data}
           >
-            <RadialBar
-              label={{ position: "insideStart", fill: "#fff" }}
-              background
-              dataKey="uv"
-            />
-            <Legend iconSize={10} layout="vertical" verticalAlign="middle" />
+            <RadialBar background dataKey="uv" />
           </RadialBarChart>
         </ResponsiveContainer>
+        <Image
+          src="/maleFemale.png"
+          alt=""
+          height={60}
+          width={60}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        />
       </div>
 
       {/* Data Section */}
